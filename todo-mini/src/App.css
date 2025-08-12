@@ -1,0 +1,248 @@
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8b4d9 0%, #e91e63 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
+}
+
+.container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(233, 30, 99, 0.15);
+  padding: 40px;
+  width: 100%;
+  max-width: 500px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  color: #2d3748;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  background: linear-gradient(135deg, #f8b4d9, #e91e63);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  color: #718096;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+.progress {
+  margin-bottom: 30px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #f8b4d9, #e91e63);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  color: #4a5568;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.add-todo {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 15px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.todo-input:focus {
+  border-color: #f8b4d9;
+  box-shadow: 0 0 0 3px rgba(248, 180, 217, 0.1);
+}
+
+.todo-input:disabled {
+  background: #f7fafc;
+  color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.add-button {
+  padding: 15px 25px;
+  background: linear-gradient(135deg, #f8b4d9, #e91e63);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.add-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(248, 180, 217, 0.3);
+}
+
+.add-button:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.todos {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #a0aec0;
+}
+
+.empty-state p {
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+}
+
+.hint {
+  font-size: 0.9rem !important;
+  color: #cbd5e0 !important;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: #f7fafc;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.todo-item:hover {
+  background: #fdf2f8;
+  transform: translateX(5px);
+}
+
+.todo-item.completed {
+  background: #fdf2f8;
+  border-color: #f8b4d9;
+}
+
+.todo-checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+  accent-color: #f8b4d9;
+  cursor: pointer;
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 1rem;
+  color: #2d3748;
+  transition: all 0.3s ease;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #718096;
+}
+
+.delete-button {
+  background: #fed7d7;
+  color: #c53030;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.todo-item:hover .delete-button {
+  opacity: 1;
+}
+
+.delete-button:hover {
+  background: #feb2b2;
+  transform: scale(1.1);
+}
+
+.clear-button {
+  padding: 12px 24px;
+  background: #fed7d7;
+  color: #c53030;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: center;
+}
+
+.clear-button:hover {
+  background: #feb2b2;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 30px 20px;
+    margin: 10px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .add-todo {
+    flex-direction: column;
+  }
+
+  .add-button {
+    width: 100%;
+  }
+}
